@@ -1,0 +1,88 @@
+import { useEffect } from 'react';
+import { View } from 'react-native';
+import { Stack, SplashScreen } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { useFonts } from 'expo-font';
+import { Cinzel_400Regular, Cinzel_700Bold } from '@expo-google-fonts/cinzel';
+import { Lato_400Regular, Lato_700Bold } from '@expo-google-fonts/lato';
+import { useFrameworkReady } from '@/hooks/useFrameworkReady';
+import { ThemeProvider } from '@/context/ThemeContext';
+import { UserProfileProvider } from '@/context/UserProfileContext';
+import { I18nProvider } from '@/context/I18nContext';
+import { NightModeProvider, useNightModeContext } from '@/context/NightModeContext';
+import { Signature } from '@/components/Signature';
+
+SplashScreen.preventAutoHideAsync();
+
+function NightOverlay() {
+  const { isNightMode } = useNightModeContext();
+  if (!isNightMode) return null;
+  return (
+    <View
+      pointerEvents="none"
+      style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: 'rgba(255, 140, 0, 0.045)',
+        zIndex: 999,
+      }}
+    />
+  );
+}
+
+export default function RootLayout() {
+  useFrameworkReady();
+
+  const [fontsLoaded, fontError] = useFonts({
+    Cinzel_400Regular,
+    Cinzel_700Bold,
+    Lato_400Regular,
+    Lato_700Bold,
+  });
+
+  useEffect(() => {
+    // StoreService placeholder
+    try {
+      // StoreService.configure().catch(() => {});
+    } catch {}
+    // NotificationService placeholder
+    try {
+      // NotificationService.requestPermissions();
+    } catch {}
+  }, []);
+
+  useEffect(() => {
+    if (fontsLoaded || fontError) {
+      SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded, fontError]);
+
+  if (!fontsLoaded && !fontError) {
+    return null;
+  }
+
+  return (
+    <I18nProvider>
+      <UserProfileProvider>
+        <ThemeProvider>
+          <NightModeProvider>
+            <Stack screenOptions={{ headerShown: false }}>
+              <Stack.Screen name="(tabs)" />
+              <Stack.Screen name="onboarding" options={{ animation: 'fade' }} />
+              <Stack.Screen name="dharma-wheel" options={{ animation: 'slide_from_right' }} />
+              <Stack.Screen name="teachers" options={{ animation: 'slide_from_right' }} />
+              <Stack.Screen name="support" options={{ animation: 'slide_from_bottom', presentation: 'modal' }} />
+              <Stack.Screen name="+not-found" />
+            </Stack>
+            <Signature />
+            <NightOverlay />
+            <StatusBar style="auto" />
+          </NightModeProvider>
+        </ThemeProvider>
+      </UserProfileProvider>
+    </I18nProvider>
+  );
+}
