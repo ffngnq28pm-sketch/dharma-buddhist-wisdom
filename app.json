@@ -20,6 +20,7 @@
       "buildNumber": "1",
       "infoPlist": {
         "UIBackgroundModes": [
+          "audio",
           "audio"
         ],
         "NSMicrophoneUsageDescription": "Dharma n'utilise pas le microphone.",
@@ -34,6 +35,8 @@
         "backgroundColor": "#080C09"
       },
       "permissions": [
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.MODIFY_AUDIO_SETTINGS",
         "android.permission.FOREGROUND_SERVICE",
         "android.permission.MODIFY_AUDIO_SETTINGS"
       ]
@@ -71,6 +74,12 @@
         "projectId": "ca23aa36-ecde-47e1-a153-25176bd6dc99"
       }
     },
-    "owner": "charif759491"
+    "owner": "charif759491",
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/ca23aa36-ecde-47e1-a153-25176bd6dc99"
+    }
   }
 }
