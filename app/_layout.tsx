@@ -11,6 +11,8 @@ import { UserProfileProvider } from '@/context/UserProfileContext';
 import { I18nProvider } from '@/context/I18nContext';
 import { NightModeProvider, useNightModeContext } from '@/context/NightModeContext';
 import { Signature } from '@/components/Signature';
+import { StoreService } from '@/services/StoreService';
+import { NotificationService } from '@/services/NotificationService';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -44,14 +46,10 @@ export default function RootLayout() {
   });
 
   useEffect(() => {
-    // StoreService placeholder
-    try {
-      // StoreService.configure().catch(() => {});
-    } catch {}
-    // NotificationService placeholder
-    try {
-      // NotificationService.requestPermissions();
-    } catch {}
+    StoreService.configure().catch(() => {});
+    NotificationService.requestPermissions().then((granted) => {
+      if (granted) NotificationService.scheduleEveningCheckin();
+    }).catch(() => {});
   }, []);
 
   useEffect(() => {
@@ -74,6 +72,7 @@ export default function RootLayout() {
               <Stack.Screen name="onboarding" options={{ animation: 'fade' }} />
               <Stack.Screen name="dharma-wheel" options={{ animation: 'slide_from_right' }} />
               <Stack.Screen name="teachers" options={{ animation: 'slide_from_right' }} />
+              <Stack.Screen name="mantras" options={{ animation: 'slide_from_right' }} />
               <Stack.Screen name="support" options={{ animation: 'slide_from_bottom', presentation: 'modal' }} />
               <Stack.Screen name="+not-found" />
             </Stack>

@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import { router } from 'expo-router';
 import { useTheme } from '@/context/ThemeContext';
 import { usePremium } from '@/hooks/usePremium';
 import { usePractice } from '@/hooks/usePractice';
@@ -184,6 +185,29 @@ export default function PracticeScreen() {
                   </TouchableOpacity>
                 );
               })}
+
+              {/* ── RESSOURCES ── */}
+              <Text style={[styles.sectionTitle, { color: colors.textMuted, marginTop: 8 }]}>
+                RESSOURCES
+              </Text>
+              <TouchableOpacity
+                style={[styles.resourceRow, { backgroundColor: colors.bgCard, borderColor: colors.border }]}
+                onPress={() => router.push('/mantras' as any)}
+                activeOpacity={0.8}
+              >
+                <View style={[styles.resourceIcon, { backgroundColor: accent + '18', borderColor: accent + '40' }]}>
+                  <Text style={styles.resourceIconText}>🙏</Text>
+                </View>
+                <View style={styles.sessionInfo}>
+                  <Text style={[styles.sessionTitle, { color: colors.textPrimary }]}>
+                    Mantras & Sutras
+                  </Text>
+                  <Text style={[styles.sessionTheme, { color: colors.textMuted }]}>
+                    Mantras · Sutras · Koans · Enseignements
+                  </Text>
+                </View>
+                <Text style={[styles.sessionArrow, { color: colors.textMuted }]}>›</Text>
+              </TouchableOpacity>
             </>
           )}
 
@@ -427,6 +451,25 @@ const styles = StyleSheet.create({
   sessionTitle: { fontFamily: 'Lato_700Bold', fontSize: 13, lineHeight: 18 },
   sessionTheme: { fontFamily: 'Lato_400Regular', fontSize: 11, marginTop: 2 },
   sessionArrow: { fontSize: 20 },
+  // Resources
+  resourceRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderRadius: 12,
+    borderWidth: 1,
+    paddingHorizontal: 14,
+    paddingVertical: 12,
+    gap: 12,
+  },
+  resourceIcon: {
+    width: 36,
+    height: 36,
+    borderRadius: 10,
+    borderWidth: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  resourceIconText: { fontSize: 18 },
   // Paths
   pathsIntro: {
     borderRadius: 14,

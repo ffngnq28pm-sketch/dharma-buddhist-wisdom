@@ -14,6 +14,7 @@ import { StatusBar } from 'expo-status-bar';
 import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
 import { useUserProfile, FOCUS_THEMES, FOCUS_THEME_ICONS, FocusTheme } from '@/context/UserProfileContext';
+import { findBuddhistNameMeaning, BuddhistName } from '@/data/buddhistNames';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
@@ -31,6 +32,7 @@ export default function OnboardingScreen() {
   const [step, setStep] = useState<'name' | 'theme'>('name');
   const [name, setName] = useState('');
   const [chosen, setChosen] = useState<FocusTheme | null>(null);
+  const [nameMeaning, setNameMeaning] = useState<BuddhistName | null>(null);
 
   function handleNameNext() {
     if (step === 'name') {
@@ -82,13 +84,44 @@ export default function OnboardingScreen() {
                 placeholder="Votre prénom..."
                 placeholderTextColor="rgba(198,124,43,0.35)"
                 value={name}
-                onChangeText={setName}
+                onChangeText={(text) => {
+                  setName(text);
+                  setNameMeaning(findBuddhistNameMeaning(text));
+                }}
                 autoFocus
                 returnKeyType="next"
                 onSubmitEditing={handleNameNext}
                 selectionColor="#C67C2B"
               />
             </View>
+
+            {/* Buddhist name meaning card */}
+            {nameMeaning && (
+              <View style={styles.nameMeaningCard}>
+                <Text style={styles.nameMeaningOriginal}>{nameMeaning.original}</Text>
+                <View style={styles.nameMeaningRow}>
+                  <Text style={styles.nameMeaningOriginBadge}>{nameMeaning.origin}</Text>
+                  <Text style={styles.nameMeaningGender}>
+                    {nameMeaning.gender === 'M' ? '♂ Masculin' : nameMeaning.gender === 'F' ? '♀ Féminin' : '⚧ Universel'}
+                  </Text>
+                </View>
+                <Text style={styles.nameMeaningText}>{nameMeaning.meaning}</Text>
+                <View style={styles.nameMeaningBadges}>
+                  {nameMeaning.concept && (
+                    <View style={styles.nameMeaningBadge}>
+                      <Text style={styles.nameMeaningBadgeText}>☸ {nameMeaning.concept}</Text>
+                    </View>
+                  )}
+                  {nameMeaning.virtue && (
+                    <View style={[styles.nameMeaningBadge, styles.nameMeaningVirtueBadge]}>
+                      <Text style={[styles.nameMeaningBadgeText, styles.nameMeaningVirtueText]}>
+                        🪷 {nameMeaning.virtue}
+                      </Text>
+                    </View>
+                  )}
+                </View>
+              </View>
+            )}
 
             <TouchableOpacity
               style={[styles.nextBtn, !name.trim() && styles.nextBtnDisabled]}
@@ -241,6 +274,88 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#080C09',
   },
+  // Buddhist name meaning card
+  nameMeaningCard: {
+    width: '100%',
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: 'rgba(90,138,122,0.4)',
+    backgroundColor: 'rgba(90,138,122,0.07)',
+    padding: 16,
+    marginBottom: 20,
+    gap: 8,
+  },
+  nameMeaningOriginal: {
+    fontFamily: 'Cinzel_700Bold',
+    fontSize: 22,
+    color: '#5A8A7A',
+    textAlign: 'center',
+    letterSpacing: 2,
+  },
+  nameMeaningRow: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: 8,
+  },
+  nameMeaningOriginBadge: {
+    fontFamily: 'Lato_700Bold',
+    fontSize: 10,
+    color: '#A67C52',
+    backgroundColor: 'rgba(166,124,82,0.12)',
+    borderRadius: 8,
+    paddingHorizontal: 10,
+    paddingVertical: 3,
+    overflow: 'hidden',
+    letterSpacing: 1,
+  },
+  nameMeaningGender: {
+    fontFamily: 'Lato_400Regular',
+    fontSize: 10,
+    color: '#6B5A40',
+    backgroundColor: 'rgba(107,90,64,0.10)',
+    borderRadius: 8,
+    paddingHorizontal: 10,
+    paddingVertical: 3,
+    overflow: 'hidden',
+    letterSpacing: 0.5,
+  },
+  nameMeaningText: {
+    fontFamily: 'Lato_400Regular',
+    fontSize: 13,
+    color: '#C8B898',
+    lineHeight: 21,
+    textAlign: 'center',
+    fontStyle: 'italic',
+  },
+  nameMeaningBadges: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    gap: 8,
+    marginTop: 4,
+  },
+  nameMeaningBadge: {
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderRadius: 10,
+    backgroundColor: 'rgba(198,124,43,0.10)',
+    borderWidth: 1,
+    borderColor: 'rgba(198,124,43,0.25)',
+  },
+  nameMeaningVirtueBadge: {
+    backgroundColor: 'rgba(90,138,122,0.10)',
+    borderColor: 'rgba(90,138,122,0.25)',
+  },
+  nameMeaningBadgeText: {
+    fontFamily: 'Lato_700Bold',
+    fontSize: 10,
+    color: '#C67C2B',
+    letterSpacing: 0.5,
+  },
+  nameMeaningVirtueText: {
+    color: '#5A8A7A',
+  },
+
   skipBtn: { padding: 12 },
   skipText: {
     fontFamily: 'Lato_400Regular',
