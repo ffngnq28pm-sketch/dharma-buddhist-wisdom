@@ -88,11 +88,11 @@ export const FOCUS_THEMES: FocusTheme[] = [
 
 export const FOCUS_THEME_ICONS: Record<FocusTheme, string> = {
   Anicca: '☸',
-  Karuna: '🙏',
-  Prajna: '📿',
+  Karuna: '🤝',
+  Prajna: '⚖️',
   Sati: '🌿',
   Metta: '💛',
-  Shanti: '☮️',
+  Shanti: '🕊️',
 };
 
 export const NOTIF_PRESETS: { key: NotifPreset; label: string; time: string; desc: string }[] = [
