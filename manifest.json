@@ -1,0 +1,19 @@
+{
+  "name": "Dharma — Sagesse Bouddhiste",
+  "short_name": "Dharma",
+  "description": "365 sagesses du Dhammapada et de la tradition bouddhiste",
+  "start_url": "/dharma-buddhist-wisdom/",
+  "scope": "/dharma-buddhist-wisdom/",
+  "display": "standalone",
+  "background_color": "#080C09",
+  "theme_color": "#C67C2B",
+  "orientation": "portrait",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "/dharma-buddhist-wisdom/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}

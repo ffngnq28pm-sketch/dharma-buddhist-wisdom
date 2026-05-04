@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { AsyncStorage_like } from './storage';
 
-export type FocusTheme = 'Anicca' | 'Karuna' | 'Prajna' | 'Sati' | 'Metta' | 'Shanti';
+export type FocusTheme = 'Kataññutā' | 'Karuna' | 'Prajna' | 'Saddhā' | 'Metta' | 'Shanti';
 export type NotifPreset = 'Aube' | 'Matin' | 'Midi' | 'Soir' | 'Veillée';
 export type AppTheme = 'dark' | 'light' | 'sepia';
 
@@ -18,7 +18,7 @@ export interface UserProfile {
 
 const DEFAULT: UserProfile = {
   firstName: '',
-  focusTheme: 'Sati',
+  focusTheme: 'Saddhā',
   focusStartedAt: Date.now(),
   notifEnabled: false,
   notifPreset: 'Matin',
@@ -78,21 +78,21 @@ export function useUserProfile() {
 }
 
 export const FOCUS_THEMES: FocusTheme[] = [
-  'Anicca',
+  'Kataññutā',
   'Karuna',
   'Prajna',
-  'Sati',
+  'Saddhā',
   'Metta',
   'Shanti',
 ];
 
 export const FOCUS_THEME_ICONS: Record<FocusTheme, string> = {
-  Anicca: '☸',
-  Karuna: '🤝',
-  Prajna: '⚖️',
-  Sati: '🌿',
-  Metta: '💛',
-  Shanti: '🕊️',
+  'Kataññutā': '🙏',
+  Karuna:      '🤝',
+  Prajna:      '⚖️',
+  'Saddhā':    '🪔',
+  Metta:       '💛',
+  Shanti:      '🕊️',
 };
 
 export const NOTIF_PRESETS: { key: NotifPreset; label: string; time: string; desc: string }[] = [

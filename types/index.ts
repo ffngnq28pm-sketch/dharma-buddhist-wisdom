@@ -12,21 +12,23 @@ export interface WisdomCard {
 }
 
 export type Theme =
-  | 'Anicca' // Impermanence
-  | 'Karuna' // Compassion
-  | 'Metta' // Bienveillance
-  | 'Prajna' // Sagesse
-  | 'Sati' // Pleine conscience
-  | 'Dana' // Générosité
-  | 'Sila' // Éthique
-  | 'Upekkha' // Équanimité
-  | 'Bodhi' // Éveil
-  | 'Nirvana' // Libération
-  | 'Dukkha' // Souffrance transformée
-  | 'Mudita' // Joie partagée
-  | 'Shanti' // Paix
-  | 'Samadhi' // Concentration
-  | 'Karma'; // Action juste
+  | 'Kataññutā' // Gratitude
+  | 'Saddhā'    // Foi · Dévotion
+  | 'Anicca'    // Impermanence
+  | 'Karuna'    // Compassion
+  | 'Metta'     // Bienveillance
+  | 'Prajna'    // Sagesse
+  | 'Sati'      // Pleine conscience
+  | 'Dana'      // Générosité
+  | 'Sila'      // Éthique
+  | 'Upekkha'   // Équanimité
+  | 'Bodhi'     // Éveil
+  | 'Nirvana'   // Libération
+  | 'Dukkha'    // Souffrance transformée
+  | 'Mudita'    // Joie partagée
+  | 'Shanti'    // Paix
+  | 'Samadhi'   // Concentration
+  | 'Karma';    // Action juste
 
 export type SourceType =
   | 'Dhammapada'

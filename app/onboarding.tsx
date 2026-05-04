@@ -19,12 +19,12 @@ import { findBuddhistNameMeaning, BuddhistName } from '@/data/buddhistNames';
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
 const THEME_CONFIG: Record<FocusTheme, { desc: string; color: string }> = {
-  Anicca: { desc: "Observer l'impermanence de chaque instant",  color: '#C67C2B' },
-  Karuna: { desc: 'Cultiver la compassion pour tous les êtres',  color: '#4A7A5A' },
-  Prajna: { desc: 'Approfondir la sagesse et la compréhension',  color: '#7A5A9A' },
-  Sati:   { desc: 'Développer la pleine conscience pas à pas',   color: '#4A7A8A' },
-  Metta:  { desc: 'Rayonner la bienveillance aimante',           color: '#C4954A' },
-  Shanti: { desc: 'Trouver la paix intérieure — paix extérieure', color: '#4A8A7A' },
+  'Kataññutā': { desc: 'Cultiver la gratitude et la reconnaissance',   color: '#A5664A' },
+  Karuna:      { desc: 'Cultiver la compassion pour tous les êtres',   color: '#4A7A5A' },
+  Prajna:      { desc: 'Approfondir la sagesse et la compréhension',   color: '#7A5A9A' },
+  'Saddhā':    { desc: 'Nourrir la foi et la dévotion sur le Chemin',  color: '#5A7A5A' },
+  Metta:       { desc: 'Rayonner la bienveillance aimante',            color: '#C4954A' },
+  Shanti:      { desc: 'Trouver la paix intérieure — paix extérieure', color: '#4A8A7A' },
 };
 
 export default function OnboardingScreen() {

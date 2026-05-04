@@ -49,7 +49,7 @@ export function usePremium(): PremiumState {
   const purchasePlan = useCallback(async (plan: PremiumPlan): Promise<PurchaseResult> => {
     setIsLoading(true);
     try {
-      const productId = plan === 'yearly' ? 'dharma_premium_yearly' : 'dharma_premium_monthly';
+      const productId = plan === 'lifetime' ? 'dharma_premium_lifetime' : 'dharma_premium_monthly';
       const result = await StoreService.purchase(productId);
       if (result.success) broadcast(true);
       return result;
