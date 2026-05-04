@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { AsyncStorage_like } from '@/context/storage';
+import { StoreService } from '@/services/StoreService';
 
 export const FREE_CARD_LIMIT = 50;
 
@@ -35,10 +36,12 @@ export function usePremium(): PremiumState {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const stored = AsyncStorage_like.get(PREMIUM_KEY) === 'true';
+    const stored = StoreService.isPremiumActive() || AsyncStorage_like.get(PREMIUM_KEY) === 'true';
     if (stored !== _isPremium) broadcast(stored);
+    const unsubRC = StoreService.onPremiumChange(broadcast);
     _listeners.push(setIsPremium);
     return () => {
+      unsubRC();
       _listeners = _listeners.filter((fn) => fn !== setIsPremium);
     };
   }, []);
@@ -46,9 +49,10 @@ export function usePremium(): PremiumState {
   const purchasePlan = useCallback(async (plan: PremiumPlan): Promise<PurchaseResult> => {
     setIsLoading(true);
     try {
-      // In production, integrate with RevenueCat or StoreKit
-      await new Promise((resolve) => setTimeout(resolve, 1200));
-      return { success: false, error: 'Store non configuré en mode développement' };
+      const productId = plan === 'yearly' ? 'dharma_premium_yearly' : 'dharma_premium_monthly';
+      const result = await StoreService.purchase(productId);
+      if (result.success) broadcast(true);
+      return result;
     } catch (e) {
       return { success: false, error: String(e) };
     } finally {
@@ -59,8 +63,9 @@ export function usePremium(): PremiumState {
   const restorePurchases = useCallback(async (): Promise<boolean> => {
     setIsLoading(true);
     try {
-      await new Promise((resolve) => setTimeout(resolve, 800));
-      return false;
+      const ok = await StoreService.restore();
+      if (ok) broadcast(true);
+      return ok;
     } finally {
       setIsLoading(false);
     }

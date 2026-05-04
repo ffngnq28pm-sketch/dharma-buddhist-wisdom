@@ -6,9 +6,10 @@ import { AudioService, AMBIENT_TRACKS, AmbientId, unlockWebAudioSync, isWebAudio
 import { AsyncStorage_like } from '@/context/storage';
 
 const PREFS_KEY = 'dharma_ambient_prefs_v1';
+const SILENCE_B64 = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAESsAACJWAAACABAAZGF0YQAAAAA=';
 const silenceAsset: unknown = require('../assets/audio/silence.wav');
 function getSilenceUrl(): string {
-  return typeof silenceAsset === 'string' ? silenceAsset : '';
+  return typeof silenceAsset === 'string' ? silenceAsset : SILENCE_B64;
 }
 
 export function AudioActivationBanner() {

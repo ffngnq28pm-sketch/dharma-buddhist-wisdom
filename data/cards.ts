@@ -268,7 +268,7 @@ export const CARDS: WisdomCard[] = [
     theme: 'Mudita',
     sourceType: 'Sutta Nipata',
     backgroundImage: 'https://images.pexels.com/photos/208371/pexels-photo-208371.jpeg?auto=compress&cs=tinysrgb&w=800',
-    premium: true,
+    premium: false,
   },
   {
     id: 'card-022',
@@ -280,7 +280,7 @@ export const CARDS: WisdomCard[] = [
     theme: 'Nirvana',
     sourceType: 'Dhammapada',
     backgroundImage: 'https://images.pexels.com/photos/372326/pexels-photo-372326.jpeg?auto=compress&cs=tinysrgb&w=800',
-    premium: true,
+    premium: false,
   },
   {
     id: 'card-023',
@@ -292,7 +292,7 @@ export const CARDS: WisdomCard[] = [
     theme: 'Bodhi',
     sourceType: 'Digha Nikaya',
     backgroundImage: 'https://images.pexels.com/photos/1252890/pexels-photo-1252890.jpeg?auto=compress&cs=tinysrgb&w=800',
-    premium: true,
+    premium: false,
   },
   {
     id: 'card-024',
@@ -304,7 +304,7 @@ export const CARDS: WisdomCard[] = [
     theme: 'Sila',
     sourceType: 'Majjhima Nikaya',
     backgroundImage: 'https://images.pexels.com/photos/1108701/pexels-photo-1108701.jpeg?auto=compress&cs=tinysrgb&w=800',
-    premium: true,
+    premium: false,
   },
   {
     id: 'card-025',
@@ -316,7 +316,7 @@ export const CARDS: WisdomCard[] = [
     theme: 'Upekkha',
     sourceType: 'Majjhima Nikaya',
     backgroundImage: 'https://images.pexels.com/photos/1819484/pexels-photo-1819484.jpeg?auto=compress&cs=tinysrgb&w=800',
-    premium: true,
+    premium: false,
   },
   {
     id: 'card-026',
@@ -328,7 +328,7 @@ export const CARDS: WisdomCard[] = [
     theme: 'Shanti',
     sourceType: 'Anguttara Nikaya',
     backgroundImage: 'https://images.pexels.com/photos/1624496/pexels-photo-1624496.jpeg?auto=compress&cs=tinysrgb&w=800',
-    premium: true,
+    premium: false,
   },
   {
     id: 'card-027',
@@ -340,7 +340,7 @@ export const CARDS: WisdomCard[] = [
     theme: 'Dana',
     sourceType: 'Itivuttaka',
     backgroundImage: 'https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&cs=tinysrgb&w=800',
-    premium: true,
+    premium: false,
   },
   {
     id: 'card-028',
@@ -352,7 +352,7 @@ export const CARDS: WisdomCard[] = [
     theme: 'Samadhi',
     sourceType: 'Dhammapada',
     backgroundImage: 'https://images.pexels.com/photos/258510/pexels-photo-258510.jpeg?auto=compress&cs=tinysrgb&w=800',
-    premium: true,
+    premium: false,
   },
   {
     id: 'card-029',
@@ -364,7 +364,7 @@ export const CARDS: WisdomCard[] = [
     theme: 'Dana',
     sourceType: 'Dhammapada',
     backgroundImage: 'https://images.pexels.com/photos/1435075/pexels-photo-1435075.jpeg?auto=compress&cs=tinysrgb&w=800',
-    premium: true,
+    premium: false,
   },
   {
     id: 'card-030',
@@ -376,7 +376,7 @@ export const CARDS: WisdomCard[] = [
     theme: 'Anicca',
     sourceType: 'Digha Nikaya',
     backgroundImage: 'https://images.pexels.com/photos/1563356/pexels-photo-1563356.jpeg?auto=compress&cs=tinysrgb&w=800',
-    premium: true,
+    premium: false,
   },
   // ── MAJJHIMA NIKAYA ───────────────────────────────────────────────────────
   {
@@ -389,7 +389,7 @@ export const CARDS: WisdomCard[] = [
     theme: 'Prajna',
     sourceType: 'Majjhima Nikaya',
     backgroundImage: 'https://images.pexels.com/photos/1287075/pexels-photo-1287075.jpeg?auto=compress&cs=tinysrgb&w=800',
-    premium: true,
+    premium: false,
   },
   {
     id: 'card-032',
@@ -401,7 +401,7 @@ export const CARDS: WisdomCard[] = [
     theme: 'Prajna',
     sourceType: 'Anguttara Nikaya',
     backgroundImage: 'https://images.pexels.com/photos/590515/pexels-photo-590515.jpeg?auto=compress&cs=tinysrgb&w=800',
-    premium: true,
+    premium: false,
   },
   {
     id: 'card-033',
@@ -413,7 +413,7 @@ export const CARDS: WisdomCard[] = [
     theme: 'Anicca',
     sourceType: 'Samyutta Nikaya',
     backgroundImage: 'https://images.pexels.com/photos/1624496/pexels-photo-1624496.jpeg?auto=compress&cs=tinysrgb&w=800',
-    premium: true,
+    premium: false,
   },
   {
     id: 'card-034',
@@ -425,7 +425,7 @@ export const CARDS: WisdomCard[] = [
     theme: 'Sati',
     sourceType: 'Majjhima Nikaya',
     backgroundImage: 'https://images.pexels.com/photos/1252890/pexels-photo-1252890.jpeg?auto=compress&cs=tinysrgb&w=800',
-    premium: true,
+    premium: false,
   },
   {
     id: 'card-035',
@@ -437,7 +437,7 @@ export const CARDS: WisdomCard[] = [
     theme: 'Mudita',
     sourceType: 'Sutta Nipata',
     backgroundImage: 'https://images.pexels.com/photos/247431/pexels-photo-247431.jpeg?auto=compress&cs=tinysrgb&w=800',
-    premium: true,
+    premium: false,
   },
   {
     id: 'card-036',
@@ -449,7 +449,7 @@ export const CARDS: WisdomCard[] = [
     theme: 'Metta',
     sourceType: 'Sutta Nipata',
     backgroundImage: 'https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=800',
-    premium: true,
+    premium: false,
   },
   {
     id: 'card-037',
@@ -461,7 +461,7 @@ export const CARDS: WisdomCard[] = [
     theme: 'Dukkha',
     sourceType: 'Samyutta Nikaya',
     backgroundImage: 'https://images.pexels.com/photos/1436380/pexels-photo-1436380.jpeg?auto=compress&cs=tinysrgb&w=800',
-    premium: true,
+    premium: false,
   },
   {
     id: 'card-038',
@@ -473,7 +473,7 @@ export const CARDS: WisdomCard[] = [
     theme: 'Sati',
     sourceType: 'Majjhima Nikaya',
     backgroundImage: 'https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&w=800',
-    premium: true,
+    premium: false,
   },
   {
     id: 'card-039',
@@ -485,7 +485,7 @@ export const CARDS: WisdomCard[] = [
     theme: 'Bodhi',
     sourceType: 'Dhammapada',
     backgroundImage: 'https://images.pexels.com/photos/296115/pexels-photo-296115.jpeg?auto=compress&cs=tinysrgb&w=800',
-    premium: true,
+    premium: false,
   },
   {
     id: 'card-040',
@@ -497,7 +497,7 @@ export const CARDS: WisdomCard[] = [
     theme: 'Nirvana',
     sourceType: 'Majjhima Nikaya',
     backgroundImage: 'https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=800',
-    premium: true,
+    premium: false,
   },
   // ── THICH NHAT HANH ───────────────────────────────────────────────────────
   {
@@ -510,7 +510,7 @@ export const CARDS: WisdomCard[] = [
     theme: 'Prajna',
     sourceType: 'Thich Nhat Hanh',
     backgroundImage: 'https://images.pexels.com/photos/1287075/pexels-photo-1287075.jpeg?auto=compress&cs=tinysrgb&w=800',
-    premium: true,
+    premium: false,
   },
   {
     id: 'card-042',
@@ -522,7 +522,7 @@ export const CARDS: WisdomCard[] = [
     theme: 'Sati',
     sourceType: 'Thich Nhat Hanh',
     backgroundImage: 'https://images.pexels.com/photos/590515/pexels-photo-590515.jpeg?auto=compress&cs=tinysrgb&w=800',
-    premium: true,
+    premium: false,
   },
   {
     id: 'card-043',
@@ -534,7 +534,7 @@ export const CARDS: WisdomCard[] = [
     theme: 'Karuna',
     sourceType: 'Thich Nhat Hanh',
     backgroundImage: 'https://images.pexels.com/photos/1624496/pexels-photo-1624496.jpeg?auto=compress&cs=tinysrgb&w=800',
-    premium: true,
+    premium: false,
   },
   {
     id: 'card-044',
@@ -546,7 +546,7 @@ export const CARDS: WisdomCard[] = [
     theme: 'Shanti',
     sourceType: 'Thich Nhat Hanh',
     backgroundImage: 'https://images.pexels.com/photos/1252890/pexels-photo-1252890.jpeg?auto=compress&cs=tinysrgb&w=800',
-    premium: true,
+    premium: false,
   },
   {
     id: 'card-045',
@@ -558,7 +558,7 @@ export const CARDS: WisdomCard[] = [
     theme: 'Metta',
     sourceType: 'Thich Nhat Hanh',
     backgroundImage: 'https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=800',
-    premium: true,
+    premium: false,
   },
   // ── SHUNRYU SUZUKI ────────────────────────────────────────────────────────
   {
@@ -571,7 +571,7 @@ export const CARDS: WisdomCard[] = [
     theme: 'Prajna',
     sourceType: 'Shunryu Suzuki',
     backgroundImage: 'https://images.pexels.com/photos/247431/pexels-photo-247431.jpeg?auto=compress&cs=tinysrgb&w=800',
-    premium: true,
+    premium: false,
   },
   {
     id: 'card-047',
@@ -583,7 +583,7 @@ export const CARDS: WisdomCard[] = [
     theme: 'Samadhi',
     sourceType: 'Shunryu Suzuki',
     backgroundImage: 'https://images.pexels.com/photos/1435075/pexels-photo-1435075.jpeg?auto=compress&cs=tinysrgb&w=800',
-    premium: true,
+    premium: false,
   },
   {
     id: 'card-048',
@@ -595,7 +595,7 @@ export const CARDS: WisdomCard[] = [
     theme: 'Bodhi',
     sourceType: 'Shunryu Suzuki',
     backgroundImage: 'https://images.pexels.com/photos/1819484/pexels-photo-1819484.jpeg?auto=compress&cs=tinysrgb&w=800',
-    premium: true,
+    premium: false,
   },
   {
     id: 'card-049',
@@ -607,7 +607,7 @@ export const CARDS: WisdomCard[] = [
     theme: 'Bodhi',
     sourceType: 'Shunryu Suzuki',
     backgroundImage: 'https://images.pexels.com/photos/1563356/pexels-photo-1563356.jpeg?auto=compress&cs=tinysrgb&w=800',
-    premium: true,
+    premium: false,
   },
   {
     id: 'card-050',
@@ -619,7 +619,7 @@ export const CARDS: WisdomCard[] = [
     theme: 'Prajna',
     sourceType: 'Shunryu Suzuki',
     backgroundImage: 'https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&cs=tinysrgb&w=800',
-    premium: true,
+    premium: false,
   },
   // ── AJAHN CHAH ────────────────────────────────────────────────────────────
   {

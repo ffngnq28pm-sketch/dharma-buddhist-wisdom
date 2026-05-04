@@ -27,7 +27,7 @@ const BUDDHIST_EVENTS: BuddhistEvent[] = [
   // 2026
   { name: 'Losar',         date: [2026, 2, 17] },
   { name: 'Magha Puja',    date: [2026, 3, 3] },
-  { name: 'Vesak',         date: [2026, 5, 31] },
+  { name: 'Vesak',         date: [2026, 5, 4] },
   { name: 'Asalha Puja',   date: [2026, 7, 29] },
   { name: 'Début du Vassa', date: [2026, 7, 30] },
   { name: 'Fin du Vassa',  date: [2026, 10, 26] },
@@ -45,8 +45,8 @@ function getPeriod(now: Date): BuddhistPeriod {
   const d = now.getDate();
   const y = now.getFullYear();
 
-  // Vesak: full moon of May (approx May 12 2025, May 31 2026, May 20 2027)
-  const vesakDays: [number, number, number][] = [[2025, 5, 12], [2026, 5, 31], [2027, 5, 20]];
+  // Vesak: full moon of May (approx May 12 2025, May 4 2026, May 20 2027)
+  const vesakDays: [number, number, number][] = [[2025, 5, 12], [2026, 5, 4], [2027, 5, 20]];
   for (const [vy, vm, vd] of vesakDays) {
     if (t >= toMs(vy, vm, vd) && t <= toMs(vy, vm, vd + 2)) return 'vesak';
   }

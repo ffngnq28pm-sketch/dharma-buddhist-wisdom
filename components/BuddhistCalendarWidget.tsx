@@ -16,6 +16,7 @@ export function BuddhistCalendarWidget() {
 
   const today = new Date();
   const dateStr = today.toLocaleDateString('fr-FR', {
+    weekday: 'long',
     day: 'numeric',
     month: 'long',
     year: 'numeric',
