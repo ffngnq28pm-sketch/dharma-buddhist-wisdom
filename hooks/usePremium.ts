@@ -4,7 +4,7 @@ import { StoreService } from '@/services/StoreService';
 
 export const FREE_CARD_LIMIT = 50;
 
-export type PremiumPlan = 'monthly' | 'yearly';
+export type PremiumPlan = 'monthly' | 'lifetime';
 
 export interface PurchaseResult {
   success: boolean;

@@ -3,7 +3,7 @@ import { AsyncStorage_like } from '@/context/storage';
 
 export type ProductId =
   | 'dharma_premium_monthly'
-  | 'dharma_premium_yearly'
+  | 'dharma_premium_lifetime'
   | 'tip_small'
   | 'tip_medium'
   | 'tip_large';
