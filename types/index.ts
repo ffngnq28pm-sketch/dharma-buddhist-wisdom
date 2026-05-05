@@ -28,7 +28,9 @@ export type Theme =
   | 'Mudita'    // Joie partagée
   | 'Shanti'    // Paix
   | 'Samadhi'   // Concentration
-  | 'Karma';    // Action juste
+  | 'Karma'     // Action juste
+  | 'Modération'
+  | 'Tempérance';
 
 export type SourceType =
   | 'Dhammapada'
